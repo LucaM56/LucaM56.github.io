@@ -1,0 +1,26 @@
+---
+import H1 from '../components/H1.astro';
+import Main from '../components/Main.astro';
+import Layout from '../layouts/Layout.astro';
+
+import {getCollection} from 'astro:content';
+
+const projects = await getCollection("projects");
+console.log(projects)
+---
+
+
+<!doctype html>
+<html lang="en"></html>
+    <Layout title="Projects">
+        <Main>
+            <H1 text = "Projects"/>
+        </Main>
+        <body>
+            <h2></h2>
+
+            <p> yea kind slackin on the projects :/ </p>
+        </body>
+        
+    </Layout>
+</html>
