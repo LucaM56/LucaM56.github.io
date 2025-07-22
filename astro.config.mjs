@@ -3,8 +3,8 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
-const SERVER_PORT = 1234;
-const LOCALHOST_URL = 'https://localhost:${SERVER_PORT}';
+const SERVER_PORT = 4321;
+const LOCALHOST_URL = `https://localhost:${SERVER_PORT}`;
 const LIVE_URL = 'https://LucaM56.github.io';
 
 const SCRIPT = process.env.npm_lifecycle_script || "";
