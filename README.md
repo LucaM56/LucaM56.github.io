@@ -1,4 +1,6 @@
-# Astro Starter Kit: Basics
+Personal Website developed using Astro and tailwind-css
+
+Astro Starter Kit: Basics
 
 ```sh
 npm create astro@latest -- --template basics
