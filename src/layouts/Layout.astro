@@ -1,5 +1,6 @@
 ---
-import '../styles/global.css' 
+import '../styles/global.css'
+import { ClientRouter } from 'astro:transitions';
 
 import Header from "../components/Header.astro"
 
@@ -10,7 +11,8 @@ interface Props {
 }
 
 const { title, description = "Luca Mason's professional website", 
-		image = "/images/WhaleShark_forDiscord.jpg" } = Astro.props
+		image = "../content/images/WhaleShark_Icon.jpg" 
+} = Astro.props
 ---
 
 
@@ -23,6 +25,7 @@ const { title, description = "Luca Mason's professional website",
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta property="og:image" content={image} />
+		<ClientRouter/>
 		<title>{title}</title>
 	</head>
 	<body class="min-h-screen">

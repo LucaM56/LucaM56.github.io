@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+
+const { team } = Astro.props;
+---
+
+<article>
+    <a href={`/experience/${team.slug}`}>
+        <Image
+            src={team.data.image}
+            width={100}
+            height={100 / 2}
+            alt={team.data.title}
+            class="rounded-2xl shadow-xl mb-4 aspect-thumbnail object-cover"
+        />
+    </a>
+    <a
+        href={`/experience/${team.slug}`}
+        class="text-4xl text-zinc-900 font-semibold inline-block"
+    >
+        <h2>{team.data.title}</h2>
+    </a>
+    <p class="text-zinc-500 text-2xl line-clamp-2">
+        {team.body}
+    </p>
+</article>

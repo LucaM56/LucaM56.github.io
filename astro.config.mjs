@@ -3,6 +3,8 @@ import { defineConfig } from 'astro/config';
 
 import tailwindcss from '@tailwindcss/vite';
 
+import mdx from '@astrojs/mdx';
+
 const SERVER_PORT = 4321;
 const LOCALHOST_URL = `https://localhost:${SERVER_PORT}`;
 const LIVE_URL = 'https://LucaM56.github.io';
@@ -18,7 +20,10 @@ if (isBuild) {
 // https://astro.build/config
 export default defineConfig({
   site: BASE_URL,
+
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+
+  integrations: [mdx()]
 });

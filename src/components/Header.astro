@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets"
+import headerImage from '../assets/WhaleShark_Icon.jpg'
 
 ---
 <header
@@ -6,8 +8,8 @@
             max-sm:py-10 max-w-7xl w-full mx-auto"
 >
 <a href="/" class="flex items-center gap-x-4">
-    <img
-        src="/images/WhaleShark_forDiscord.jpg"
+    <Image
+        src={headerImage}
         width={60}
         height={60}
         alt="Whale Shark"
@@ -16,7 +18,7 @@
 </a>
 <ul class="flex gap-x-8">
     <li><a href="/" class="text-teal-900 font-bold">Home</a></li>
-    <li><a href="/experience/" class="text-teal-900 font-bold">Experience</a></li>
+    <li><a href="/experience/" class="text-teal-900 font-bold">Technical</a></li>
     <li><a href="/project/" class="text-teal-900 font-bold">Projects</a></li>
     <li><a href="/about/" class="text-teal-900 font-bold">About</a></li>
 </ul>

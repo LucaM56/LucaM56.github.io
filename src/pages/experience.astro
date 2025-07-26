@@ -1,15 +1,30 @@
 ---
+import Main from '../components/Main.astro';
+import H1 from '../components/H1.astro';
 import Layout from '../layouts/Layout.astro';
 
+import TechnicalList from '../components/TechnicalList.astro';
+import { getCollection } from 'astro:content';
+
+const technicals = await getCollection("technicals")
 ---
 
 <!doctype html>
-<html lang="en"></html>
+<html lang="en">
     <Layout title="Experience">
+        <Main>
+            <H1 text="Technical Experience"/>
+
+            {technicals.map(technical => (
+                <TechnicalList technicals={technicals}/>
+            ))}
+        </Main>
+        
+        
         <body>
 
             <h1>Experience</h1>
-            <h2>Technical Experience</h2>
+            <h2>Technical Experience </h2>
 
             <p>This page will include work experience</p>
             <ul>

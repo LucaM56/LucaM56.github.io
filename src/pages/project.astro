@@ -3,19 +3,24 @@ import H1 from '../components/H1.astro';
 import Main from '../components/Main.astro';
 import Layout from '../layouts/Layout.astro';
 
+import ProjectList from '../components/ProjectList.astro';
 import {getCollection} from 'astro:content';
 
 const projects = await getCollection("projects");
-console.log(projects)
 ---
 
 
 <!doctype html>
-<html lang="en"></html>
+<html lang="en">
     <Layout title="Projects">
         <Main>
             <H1 text = "Projects"/>
+
+            {projects.map(project => (
+                <ProjectList projects={projects}/>
+            ))}
         </Main>
+
         <body>
             <h2></h2>
 

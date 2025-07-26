@@ -1,43 +1,51 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import H1 from '../components/H1.astro';
 import Main from '../components/Main.astro';
+
+import headshot from '../assets/2025_headshot.png'
 ---
 
 
-
-<Layout title="Home Page">
-    <Main>
-        <H1 text="Luca Mason"/>
-    </Main>
-    
-    <body>
-        <div class="introduction">
-            <div class="self-blurb">
-                <h3>I am a fourth year Mechatronics Engineering Student at Memorial University of Newfoundland</h3>
-                <div class="self-image">
-                    <img src= /images/2025_headshot.png alt={"Headshot.jpg"}>
-                </div>
-            </div>
-            <h3>Page Contents</h3>
-        </div>
-
-        <p>Main Content</p>
-        <ul>
-            <li>personal Picture</li>
-            <li>name and brief of current position (education)</li>
-            <li>top three skills</li>
-            <li>awards (from Polytechnique, and NSERC)</li>
-        </ul>
-
-        <p>directions to different pages (most recent two on display)</p>
-        <ul>
-            <li>Work Experience </li>
-            <li>Personal Projects</li>
-        </ui>
+<!doctype html>
+<html lang="en">
+    <Layout title="Home Page">
+        <Main>
+            <H1 text="Luca Mason"/>
+        </Main>
         
+        <body>
+            <div class="introduction">
+                <div class="self-blurb">
+                    <h3>I am a fourth year Mechatronics Engineering Student at Memorial University of Newfoundland</h3>
+                    <div class="self-image">
+                        <Image
+                            src={headshot}
+                            alt="Headshot.jpg"
+                        />
+                    </div>
+                </div>
+                <h3>Page Contents</h3>
+            </div>
 
-        <p>All pages should contain header with link to Linkedin and github</p>
-        <p>Include ability to toggle light and dark mode, and include something to follow cursor</p>
-    </body>
-</Layout>
+            <p>Main Content</p>
+            <ul>
+                <li>personal Picture</li>
+                <li>name and brief of current position (education)</li>
+                <li>top three skills</li>
+                <li>awards (from Polytechnique, and NSERC)</li>
+            </ul>
+
+            <p>directions to different pages (most recent two on display)</p>
+            <ul>
+                <li>Work Technical </li>
+                <li>Personal Projects</li>
+            </ui>
+            
+
+            <p>All pages should contain header with link to Linkedin and github</p>
+            <p>Include ability to toggle light and dark mode, and include something to follow cursor</p>
+        </body>
+    </Layout>
+</html>
