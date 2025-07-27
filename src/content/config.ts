@@ -1,7 +1,5 @@
 import {defineCollection, z } from "astro:content";
 
-import {glob, file} from "astro/loaders";
-
 const projectsCollection = defineCollection({
     schema: ({image}) => z.object({
         creator: z.string(),
@@ -37,15 +35,3 @@ export const collections = {
     technicals: technicalsCollection,
     teams: teamCollection,
 };
-
-/*
-data in technical - 
-title: z.string(),
-department: z.string(),
-employer: z.string(),
-location: z.string(),
-timeFrame: z.string(),
-image: image(),
-
-in the body: general description of project and what I did
-*/

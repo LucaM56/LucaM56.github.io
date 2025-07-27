@@ -1,23 +1,38 @@
 ---
-
+import { Image } from "astro:assets"
+import LinkedIn_Logo from "../assets/LinkedIn_Logo.png"
+import GitHub_Logo from "../assets/GitHub_Logo.png"
 ---
+<div class="sticky bottom-0 w-full bg-black px-4 sm:px-4 lg:px-12 py-4 ">
+    <footer class="flex justify-end gap-4 max-w-3xl mx-auto">
+    <!-- chang this so header and footer are flexible with screen size but have a minimum spacing -->
+        <div>
+            <a href="mailto:lucarmsn@gmail.com" target="_blank" class="text-[#FFD1B2] font-bold font-roboto hover:underline">
+                Contact me
+            </a>
+        </div>
+        <div>
+            <a href="https://github.com/LucaM56" target="_blank">
+                <Image
+                    src={GitHub_Logo}
+                    width={30}
+                    height={30}
+                    alt="GitHub"
+                    class="square-2xl aspect-thumbnail object-cover"
+                />
+            </a>
+        </div>
 
-<a href="/" class="flex items-right gap-x-4">
-    <img
-        src="/images/linkedIn.png"
-        width={60}
-        height={60}
-        alt="Whale Shark"
-        class="rounded-2xl aspect-thumbnail object-cover"
-    />
-</a>
-
-<a href="/" class="flex items-right gap-x-4">
-    <img
-        src="/images/github-mark.png"
-        width={60}
-        height={60}
-        alt="Whale Shark"
-        class="rounded-2xl aspect-thumbnail object-cover"
-    />
-</a>
+        <div>
+        <a href="https://www.linkedin.com/in/luca-mason" target="_blank">
+            <Image
+                src={LinkedIn_Logo}
+                width={30}
+                height={30}
+                alt="LinkedIn"
+                class="square-2xl aspect-thumbnail object-cover"
+            />
+        </a>
+        </div>
+    </footer>
+</div>

@@ -1,26 +1,28 @@
 ---
 import { Image } from "astro:assets"
-import headerImage from '../assets/WhaleShark_Icon.jpg'
+import headerImage from '../assets/MUN_Logo.webp'
 
 ---
-<header
-    class="flex justify-between items-center px-24 py-12 max-sm:px-5 
-            max-sm:py-10 max-w-7xl w-full mx-auto"
->
-<a href="/" class="flex items-center gap-x-4">
-    <Image
-        src={headerImage}
-        width={60}
-        height={60}
-        alt="Whale Shark"
-        class="rounded-2xl aspect-thumbnail object-cover"
-    />
-</a>
-<ul class="flex gap-x-8">
-    <li><a href="/" class="text-teal-900 font-bold">Home</a></li>
-    <li><a href="/experience/" class="text-teal-900 font-bold">Technical</a></li>
-    <li><a href="/project/" class="text-teal-900 font-bold">Projects</a></li>
-    <li><a href="/about/" class="text-teal-900 font-bold">About</a></li>
-</ul>
+<div class="sticky top-0 opacity-0 hover:opacity-100 transition-opacity w-full bg-black px-4 sm:px-8 lg:px-24 py-8">
+    <header class="flex justify-between items-center max-w-3xl w-full mx-auto">
+    <!-- chang this so header and footer are flexible with screen size but have a minimum spacing -->
+        <a href="/" class="flex items-center gap-x-4">
+            <Image
+                src={headerImage}
+                width={60}
+                height={60}
+                alt="MUN_Logo"
+                class="aspect-thumbnail object-cover"
+            />
+            <h1 class="text-[#FFD1B2] font-bold font-roboto">Luca Mason</h1>
+        </a>
 
-</header>
+        <ul class="flex gap-x-8 items-center text-[#FFD1B2] font-bold">
+            <li><a href="/">Home</a></li>
+            <li><a href="/experience/">Technical</a></li>
+            <li><a href="/project/">Projects</a></li>
+            <li><a href="/about/">About</a></li>
+        </ul>
+    </header>
+</div>
+<!-- main text colour beige -> #FFD1B2 -->
