@@ -4,7 +4,10 @@ import Layout from '../layouts/Layout.astro';
 import H1 from '../components/H1.astro';
 import Main from '../components/Main.astro';
 
-import headshot from '../assets/2025_headshot.png'
+import headshot from '../assets/2025_headshot.png';
+import cad_symbol from '../assets/CAD_Symbol.png';
+import circuit_symbol from '../assets/Circuit_Symbol.png';
+import code_symbol from '../assets/Coding_Symbol.png';
 ---
 
 
@@ -12,40 +15,85 @@ import headshot from '../assets/2025_headshot.png'
 <html lang="en">
     <Layout title="Home Page">
         <Main>
-            <H1 text="Luca Mason"/>
-        </Main>
-        
-        <body>
-            <div class="introduction">
-                <div class="self-blurb">
-                    <h3>I am a fourth year Mechatronics Engineering Student at Memorial University of Newfoundland</h3>
-                    <div class="self-image">
-                        <Image
-                            src={headshot}
-                            alt="Headshot.jpg"
-                        />
+            <body>
+
+                <div class="introduction grid grid-cols-2 grid-rows-1 pt-10 pb-5 text-[#FFD1B2] font-roboto">
+                    <div class="self-blurb text-left content-center">
+                        <h1 class="font-bold text-2xl">Luca Mason</h1>
+                        <p>I am a fourth year Mechatronics Engineering 
+                            Student at Memorial University of Newfoundland</p>
+                    </div>
+                    <div class="headshot">
+                            <Image class="rounded-4xl aspect-auto object-cover"
+                                src={headshot}
+                                alt="Headshot.jpg"
+                            />
                     </div>
                 </div>
-                <h3>Page Contents</h3>
-            </div>
 
-            <p>Main Content</p>
-            <ul>
-                <li>personal Picture</li>
-                <li>name and brief of current position (education)</li>
-                <li>top three skills</li>
-                <li>awards (from Polytechnique, and NSERC)</li>
-            </ul>
+                <div class="skills flex 
+                        gap-5 justify-around p-3 rounded-3xl
+                        text-[#FFD1B2] font-roboto bg-[#AB81CD]">
 
-            <p>directions to different pages (most recent two on display)</p>
-            <ul>
-                <li>Work Technical </li>
-                <li>Personal Projects</li>
-            </ui>
-            
+                    <div class="skill_1 grid grid-flow-col grid-rows-3">
+                        <div class="row-span-3">
+                            <Image class="aspect-auto"
+                                src={cad_symbol}
+                                alt="CAD.png"
+                            />
+                        </div>
+                        <div class="col-span-2 font-bold">CAD</div>
+                        <div class="col-span-2 row-span-2 text-sm">
+                            skill details
+                        </div>
+                    </div>
 
-            <p>All pages should contain header with link to Linkedin and github</p>
-            <p>Include ability to toggle light and dark mode, and include something to follow cursor</p>
-        </body>
+                    <div class="skill_2 grid grid-flow-col grid-rows-3">
+                        <div class="row-span-3">
+                            <Image class="aspect-auto"
+                                src={code_symbol}
+                                alt="Code.png"
+                            />
+                        </div>
+                        <div class="col-span-2 font-bold">Software Development</div>
+                        <div class="col-span-2 row-span-2 text-sm">
+                            skill details
+                        </div>
+                    </div>
+
+                    <div class="skill_3 grid grid-flow-col grid-rows-3">
+                        <div class="row-span-3">
+                            <Image class="aspect-auto"
+                                src={circuit_symbol}
+                                alt="Circuit.png"
+                            />
+                        </div>
+                        <div class="col-span-2 font-bold">Circuit Design</div>
+                        <div class="col-span-2 row-span-2 text-sm">
+                            skill details
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-[#FFD1B2] font-roboto">
+                    <p>Main Content</p>
+                    <ul>
+                        <li>name and brief of current position (education)</li>
+                        <li>top three skills</li>
+                        <li>awards (from Polytechnique, and NSERC)</li>
+                    </ul>
+
+                    <p>directions to different pages (most recent two on display)</p>
+                    <ul>
+                        <li>Work Technical </li>
+                        <li>Personal Projects</li>
+                    </ui>
+                    
+
+                    <p>All pages should contain header with link to Linkedin and github</p>
+                    <p>Include ability to toggle light and dark mode, and include something to follow cursor</p>
+                </div>
+            </body>
+        </Main>
     </Layout>
 </html>

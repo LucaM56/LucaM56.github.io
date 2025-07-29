@@ -3,9 +3,8 @@ import { Image } from "astro:assets"
 import headerImage from '../assets/MUN_Logo.webp'
 
 ---
-<div class="sticky top-0 opacity-0 hover:opacity-100 transition-opacity w-full bg-black px-4 sm:px-8 lg:px-24 py-8">
+<div class="top-0 w-full bg-black px-4 sm:px-8 lg:px-24 py-8 text-[#FFD1B2]">
     <header class="flex justify-between items-center max-w-3xl w-full mx-auto">
-    <!-- chang this so header and footer are flexible with screen size but have a minimum spacing -->
         <a href="/" class="flex items-center gap-x-4">
             <Image
                 src={headerImage}
@@ -14,10 +13,13 @@ import headerImage from '../assets/MUN_Logo.webp'
                 alt="MUN_Logo"
                 class="aspect-thumbnail object-cover"
             />
-            <h1 class="text-[#FFD1B2] font-bold font-roboto">Luca Mason</h1>
+            <div>
+                <h1 class="font-bold font-roboto">Luca Mason</h1>
+                <h2 class="font-roboto text-xs">Mechatronics Engineering Student</h2>
+            </div>
         </a>
 
-        <ul class="flex gap-x-8 items-center text-[#FFD1B2] font-bold">
+        <ul class="flex gap-x-4 items-center font-bold">
             <li><a href="/">Home</a></li>
             <li><a href="/experience/">Technical</a></li>
             <li><a href="/project/">Projects</a></li>

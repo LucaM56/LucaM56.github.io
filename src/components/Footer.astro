@@ -3,11 +3,18 @@ import { Image } from "astro:assets"
 import LinkedIn_Logo from "../assets/LinkedIn_Logo.png"
 import GitHub_Logo from "../assets/GitHub_Logo.png"
 ---
-<div class="sticky bottom-0 w-full bg-black px-4 sm:px-4 lg:px-12 py-4 ">
-    <footer class="flex justify-end gap-4 max-w-3xl mx-auto">
-    <!-- chang this so header and footer are flexible with screen size but have a minimum spacing -->
+<footer class="flex flex-row bottom-0 w-full bg-black px-4 sm:px-4 lg:px-12 py-4 text-[#FFD1B2] font-roboto">
+
+    <div class="flex gap-4 max-w-3xl mx-auto">
+        <p>Create with 
+            <a href="https://astro.build/" target="_blank" class="hover:underline">Astro</a> 
+            and 
+            <a href="https://tailwindcss.com/" target="_blank" class="hover:underline">Tailwind CSS</a>.</p>
+    </div>
+
+    <div class="flex justify-end gap-4 max-w-3xl mx-auto">
         <div>
-            <a href="mailto:lucarmsn@gmail.com" target="_blank" class="text-[#FFD1B2] font-bold font-roboto hover:underline">
+            <a href="mailto:lucarmsn@gmail.com" target="_blank" class="font-bold hover:underline">
                 Contact me
             </a>
         </div>
@@ -22,7 +29,6 @@ import GitHub_Logo from "../assets/GitHub_Logo.png"
                 />
             </a>
         </div>
-
         <div>
         <a href="https://www.linkedin.com/in/luca-mason" target="_blank">
             <Image
@@ -34,5 +40,5 @@ import GitHub_Logo from "../assets/GitHub_Logo.png"
             />
         </a>
         </div>
-    </footer>
-</div>
+    </div>
+</footer>
