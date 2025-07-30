@@ -2,7 +2,14 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import H1 from '../components/H1.astro';
+import H2 from '../components/H2.astro';
 import Main from '../components/Main.astro';
+
+import TechnicalList from '../components/TechnicalList.astro';
+import TeamList from '../components/TeamList.astro';
+import ProjectList from '../components/ProjectList.astro';
+
+import { getCollection } from 'astro:content';
 
 import headshot from '../assets/2025_headshot.png';
 import cad_symbol from '../assets/CAD_Symbol.png';
@@ -17,9 +24,11 @@ import code_symbol from '../assets/Coding_Symbol.png';
         <Main>
             <body>
 
-                <div class="introduction grid grid-cols-2 grid-rows-1 pt-10 pb-5 text-[#FFD1B2] font-roboto">
+                <div class="introduction grid grid-cols-2 grid-rows-1 
+                            pt-10 pb-5 text-[#FFD1B2] font-roboto">
                     <div class="self-blurb text-left content-center">
-                        <h1 class="font-bold text-2xl">Luca Mason</h1>
+                        <h1 class="font-bold text-4xl">Hello, my name is
+                                                        Luca Mason.</h1>
                         <p>I am a fourth year Mechatronics Engineering 
                             Student at Memorial University of Newfoundland</p>
                     </div>
@@ -27,72 +36,93 @@ import code_symbol from '../assets/Coding_Symbol.png';
                             <Image class="rounded-4xl aspect-auto object-cover"
                                 src={headshot}
                                 alt="Headshot.jpg"
+                                width="400" height="800"
                             />
                     </div>
                 </div>
 
-                <div class="skills flex 
-                        gap-5 justify-around p-3 rounded-3xl
-                        text-[#FFD1B2] font-roboto bg-[#AB81CD]">
-
-                    <div class="skill_1 grid grid-flow-col grid-rows-3">
-                        <div class="row-span-3">
-                            <Image class="aspect-auto"
-                                src={cad_symbol}
-                                alt="CAD.png"
-                            />
+                <div class="skills">
+                    <H2 text='Skills'/>
+                    <div class="flex pr-5 pl-5 gap-3 pt-3 pb-3 
+                                rounded-3xl justify-evenly
+                                bg-[#AB81CD]">
+                        <div class="skill_1 grid grid-flow-col grid-rows-3">
+                            <div class="row-span-3 mr-2">
+                                <Image class="aspect-auto"
+                                    src={cad_symbol}
+                                    alt="CAD.png"
+                                    width="50" height="50"
+                                />
+                            </div>
+                            <div class="col-span-2 font-bold">CAD</div>
+                            <div class="col-span-2 row-span-2 text-sm max-w-70">
+                                CAD design is my strongest skill. 
+                                I have 
+                            </div>
                         </div>
-                        <div class="col-span-2 font-bold">CAD</div>
-                        <div class="col-span-2 row-span-2 text-sm">
-                            skill details
+
+                        <div class="skill_2 grid grid-flow-col grid-rows-3">
+                            <div class="row-span-3 mr-2">
+                                <Image class="aspect-auto"
+                                    src={code_symbol}
+                                    alt="Code.png"
+                                    width="50" height="50"
+                                />
+                            </div>
+                            <div class="col-span-2 font-bold">Software Development</div>
+                            <div class="col-span-2 row-span-2 text-sm max-w-70">
+                                I am actively developing my software development skills
+                            </div>
+                        </div>
+
+                        <div class="skill_3 grid grid-flow-col grid-rows-3">
+                            <div class="row-span-3 mr-2">
+                                <Image class="aspect-auto"
+                                    src={circuit_symbol}
+                                    alt="Circuit.png"
+                                    width="50" height="50"
+                                />
+                            </div>
+                            <div class="col-span-2 font-bold">Circuit Design</div>
+                            <div class="col-span-2 row-span-2 text-sm max-w-70">
+                                I thourghly enjoying designing and developing circuits
+                            </div>
                         </div>
                     </div>
-
-                    <div class="skill_2 grid grid-flow-col grid-rows-3">
-                        <div class="row-span-3">
-                            <Image class="aspect-auto"
-                                src={code_symbol}
-                                alt="Code.png"
-                            />
-                        </div>
-                        <div class="col-span-2 font-bold">Software Development</div>
-                        <div class="col-span-2 row-span-2 text-sm">
-                            skill details
-                        </div>
-                    </div>
-
-                    <div class="skill_3 grid grid-flow-col grid-rows-3">
-                        <div class="row-span-3">
-                            <Image class="aspect-auto"
-                                src={circuit_symbol}
-                                alt="Circuit.png"
-                            />
-                        </div>
-                        <div class="col-span-2 font-bold">Circuit Design</div>
-                        <div class="col-span-2 row-span-2 text-sm">
-                            skill details
-                        </div>
-                    </div>
-
                 </div>
-                <div class="text-[#FFD1B2] font-roboto">
-                    <p>Main Content</p>
-                    <ul>
-                        <li>name and brief of current position (education)</li>
-                        <li>top three skills</li>
-                        <li>awards (from Polytechnique, and NSERC)</li>
-                    </ul>
 
-                    <p>directions to different pages (most recent two on display)</p>
-                    <ul>
-                        <li>Work Technical </li>
-                        <li>Personal Projects</li>
-                    </ui>
-                    
+                <div class="experience">
+                    <H2 text='Experience'/>
+                    <div class="grid grid-cols-2 grid-rows-2">
 
-                    <p>All pages should contain header with link to Linkedin and github</p>
-                    <p>Include ability to toggle light and dark mode, and include something to follow cursor</p>
+                    </div>
                 </div>
+
+                <div class="personal projects ">
+                    <H2 text='Personal Projects'/>
+                    <div class="grid grid-cols-1 grid-rows-2">
+
+                    </div>
+                </div>
+
+                <div class="awards">
+                    <H2 text="Awards"/>
+                    <div class="grid justify-around grid-cols-3 content-center
+                        gap-5 p-3 rounded-3xl mt-10 mb-10
+                        text-center bg-[#AB81CD]">
+                        <div>
+                            <p>Undergraduate Student Research Award (2024,2025)</p>
+                            <p class="text-sm">Awarded by the Natural Sciences and Engineering Research Council of Canada.</p>
+                        </div>
+                        <div>
+                            <p>Polytechnique reaseach award (2025)</p>
+                        </div>
+                        <div>
+                            <p>Faculty of Engineering Dean's List (2022-2023)</p>
+                        </div>
+                    </div>
+                </div>
+
             </body>
         </Main>
     </Layout>
