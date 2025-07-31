@@ -1,27 +1,32 @@
 ---
-import { type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
- 
 const { technical } = Astro.props
 ---
 
 <article>
-    <a href={`/technical/${technical.slug}`}>
-        <Image
-            src={technical.data.image}
-            width={100}
-            height={100/2}
-            alt={technical.data.title}
-            class="rounded-2x1 shadow-xl mb-4 aspect-thumbnail object-cover"
-            />
-    </a>
-    <a
-        href={`/technical/${technical.slug}`}
-        class="text-4x1 text-zinc-900 font-semibold inline block"
-    >
-        <h2>{technical.data.title}</h2>
-    </a>
-    <p class="text-zinc-500 text-2x1 lin-clamp-2">
-        {technical.body}
-    </p>
+    <div class="grid grid-cols-4 p-3.5 rounded-4xl
+                bg-[#AB81CD]">
+        <div class="content-center pr-5">
+            <a href={`/technical/${technical.slug}`}>
+                <Image
+                    src={technical.data.image}
+                    width={100}
+                    height={100/2}
+                    alt={technical.data.title}
+                    class="rounded-xl mb-4 aspect-thumbnail object-cover"
+                    />
+            </a>
+        </div>
+        <div class="col-span-3">
+            <a
+                href={`/technical/${technical.slug}`}
+                class="text-2xl text-zinc-900 font-semibold inline-block"
+            >
+                <h2>{technical.data.title}</h2>
+            </a>
+            <p class="text-[#25283D] text-xl line-clamp-2">
+                {technical.body}
+            </p>
+        </div>
+    </div>
 </article>

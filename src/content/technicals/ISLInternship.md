@@ -8,8 +8,8 @@ image: "./images/ISL_Logo.png"
 ---
 
 work for Dr. De'Silva
-(+)
-(+)
-(+)
++
++
++
 
-[MUN-ISL](https://www.mun.ca/engineering/research/centres-and-facilities/research-laboratories/mechanical-engineering/intelligent-systems-laboratory/)
+MUN-ISL[MUN-ISL](https://www.mun.ca/engineering/research/centres-and-facilities/research-laboratories/mechanical-engineering/intelligent-systems-laboratory/)

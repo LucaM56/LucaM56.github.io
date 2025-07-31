@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Team from "./Team.astro";
+type Props = {
+    teams: CollectionEntry<'teams'>[];
+}
+
+const { teams } = Astro.props;
+---
+
+<div
+    class="grid grid-cols-2 grid-rows-2 gap-x-15 gap-y-14 max-md:grid-cols-1 mb-24"
+>
+    {teams.map((team) => <Team team={team} />)}
+</div>

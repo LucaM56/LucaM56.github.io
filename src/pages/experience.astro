@@ -4,9 +4,11 @@ import H1 from '../components/H1.astro';
 import Layout from '../layouts/Layout.astro';
 
 import TechnicalList from '../components/TechnicalList.astro';
+import TeamList from '../components/TeamList.astro';
 import { getCollection } from 'astro:content';
 
 const technicals = await getCollection("technicals")
+const teams = await getCollection("teams")
 ---
 
 <!doctype html>
@@ -14,20 +16,9 @@ const technicals = await getCollection("technicals")
     <Layout title="Experience">
         <Main>
             <H1 text="Technical Experience"/>
-
-            {technicals.map(technical => (
-                <TechnicalList technicals={technicals}/>
-            ))}
-        </Main>
-        
-        
-        <body>
-
-            <h1>Experience</h1>
-            <h2>Technical Experience </h2>
-
-            
-        </body>
-        
+            <TechnicalList technicals={technicals}/>
+            <H1 text="Student Design Teams"/>
+            <TeamList teams={teams}/>
+        </Main>        
     </Layout>
 </html>

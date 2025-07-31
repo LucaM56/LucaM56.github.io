@@ -9,7 +9,10 @@ const { technicals } = Astro.props;
 ---
 
 <div
-    class="grid grid-cols-2 gap-x-15 gap-y-14 max-md:grid-cols-1 mb-24"
+    class="grid grid-cols-2 grid-rows-2 
+            gap-x-15 gap-y-14 
+            max-md:grid-cols-1 mb-24
+            "
 >
     {technicals.map((technical) => <Technical technical={technical} />)}
 </div>
