@@ -3,42 +3,45 @@ import { Image } from "astro:assets"
 import LinkedIn_Logo from "../assets/LinkedIn_Logo.png"
 import GitHub_Logo from "../assets/GitHub_Logo.png"
 ---
-<footer class="flex flex-row bottom-0 w-full bg-black px-4 sm:px-4 lg:px-12 py-4 text-[#FFD1B2] font-roboto">
+<div class="bottom-0 w-full bg-black px-4 sm:px-4 lg:px-12 py-4 
+            text-[#FFD1B2] font-roboto font-bold">
+    <footer class="flex max-w-8xl w-full mx-auto">
 
-    <div class="flex gap-4 max-w-3xl mx-auto">
-        <p>Create with 
-            <a href="https://astro.build/" target="_blank" class="hover:underline">Astro</a> 
-            and 
-            <a href="https://tailwindcss.com/" target="_blank" class="hover:underline">Tailwind CSS</a>.</p>
-    </div>
-
-    <div class="flex justify-end gap-4 max-w-3xl mx-auto">
-        <div>
-            <a href="mailto:lucarmsn@gmail.com" target="_blank" class="font-bold hover:underline">
-                Contact me
-            </a>
+        <div class="flex gap-4 max-w-3xl mx-auto">
+            <p>Create with 
+                <a href="https://astro.build/" target="_blank" class="hover:underline">Astro</a> 
+                and 
+                <a href="https://tailwindcss.com/" target="_blank" class="hover:underline">Tailwind CSS</a>.</p>
         </div>
-        <div>
-            <a href="https://github.com/LucaM56" target="_blank">
+
+        <div class="flex justify-end gap-4 max-w-3xl mx-auto">
+            <div>
+                <a href="mailto:lucarmsn@gmail.com" target="_blank" class="font-bold hover:underline">
+                    Contact me
+                </a>
+            </div>
+            <div>
+                <a href="https://github.com/LucaM56" target="_blank">
+                    <Image
+                        src={GitHub_Logo}
+                        width={30}
+                        height={30}
+                        alt="GitHub"
+                        class="square-2xl aspect-thumbnail object-cover"
+                    />
+                </a>
+            </div>
+            <div>
+            <a href="https://www.linkedin.com/in/luca-mason" target="_blank">
                 <Image
-                    src={GitHub_Logo}
+                    src={LinkedIn_Logo}
                     width={30}
                     height={30}
-                    alt="GitHub"
+                    alt="LinkedIn"
                     class="square-2xl aspect-thumbnail object-cover"
                 />
             </a>
+            </div>
         </div>
-        <div>
-        <a href="https://www.linkedin.com/in/luca-mason" target="_blank">
-            <Image
-                src={LinkedIn_Logo}
-                width={30}
-                height={30}
-                alt="LinkedIn"
-                class="square-2xl aspect-thumbnail object-cover"
-            />
-        </a>
-        </div>
-    </div>
-</footer>
+    </footer>
+</div>

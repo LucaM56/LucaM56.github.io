@@ -9,7 +9,8 @@ const { teams } = Astro.props;
 ---
 
 <div
-    class="grid grid-cols-2 grid-rows-2 gap-x-15 gap-y-14 max-md:grid-cols-1 mb-24"
+    class="grid xl:grid-cols-2 grid-cols-1
+            gap-x-5 gap-y-5 mb-15"
 >
     {teams.map((team) => <Team team={team} />)}
 </div>

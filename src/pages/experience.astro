@@ -15,10 +15,12 @@ const teams = await getCollection("teams")
 <html lang="en">
     <Layout title="Experience">
         <Main>
-            <H1 text="Technical Experience"/>
-            <TechnicalList technicals={technicals}/>
-            <H1 text="Student Design Teams"/>
-            <TeamList teams={teams}/>
-        </Main>        
+            <div class="grid justify-items-center">
+                <H1 text="Technical Experience"/>
+                <TechnicalList technicals={technicals}/>
+                <H1 text="Student Design Teams"/>
+                <TeamList teams={teams}/>
+            </div>
+        </Main>   
     </Layout>
 </html>

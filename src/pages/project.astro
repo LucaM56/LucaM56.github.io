@@ -14,18 +14,10 @@ const projects = await getCollection("projects");
 <html lang="en">
     <Layout title="Projects">
         <Main>
-            <H1 text = "Projects"/>
-
-            {projects.map(project => (
-                <ProjectList projects={projects}/>
-            ))}
-        </Main>
-
-        <body>
-            <h2></h2>
-
-            <p> yea kind slackin on the projects :/ </p>
-        </body>
-        
+            <div class="grid justify-items-center">
+                <H1 text = "Projects"/>
+                <ProjectList projects={projects}>
+            </div>
+        </Main>        
     </Layout>
 </html>
