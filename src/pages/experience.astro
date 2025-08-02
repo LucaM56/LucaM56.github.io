@@ -7,15 +7,15 @@ import TechnicalList from '../components/TechnicalList.astro';
 import TeamList from '../components/TeamList.astro';
 import { getCollection } from 'astro:content';
 
-const technicals = await getCollection("technicals")
-const teams = await getCollection("teams")
+const technicals = await getCollection("technicals");
+const teams = await getCollection("teams");
 ---
 
 <!doctype html>
 <html lang="en">
     <Layout title="Experience">
         <Main>
-            <div class="grid justify-items-center">
+            <div class="grid justify-items-center max-w-5xl mx-auto">
                 <H1 text="Technical Experience"/>
                 <TechnicalList technicals={technicals}/>
                 <H1 text="Student Design Teams"/>

@@ -1,20 +1,41 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import H1 from '../components/H1.astro';
 
+import personalPhoto from '../assets/images/headshots/germany_headshot.jpg'
 ---
 
 <!doctype html>
 <html lang="en">
     <Layout title="About Me">
         <body>
+            <div class="max-w-5xl mx-auto w-full 
+                        text-[#FFD1B2] font-roboto">
+                
+                <div class="grid grid-cols-2">
 
-            <h1>About Me</h1>
-            <h2>... and my new astro site</h2>
+                    <div>
+                        <H1 text="About"/>
+                        <p class="text-center">Thanks for taking a look at my site!</p>
+                    </div>
 
-            <p>I am learning Astro using Astro's introductionary tutorial. This is the second page of my website</p>
-        
-            <p>This site will update as I learn more.</p>
+                    <div class="photo col-2">
+                        <Image
+                            src={personalPhoto}
+                            width={200}
+                            height={200 / 2}
+                            alt="Personal Photo"
+                            class="mb-4 aspect-thumbnail object-cover"
+                        />
+                    </div>
+
+                </div>
+                
+                <p>I am learning Astro using Astro's introductionary tutorial. This is the second page of my website</p>
+            
+                <p>This site will update as I learn more.</p>
+            </div>
         </body>
-        
     </Layout>
 </html>

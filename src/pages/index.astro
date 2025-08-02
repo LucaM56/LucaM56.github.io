@@ -1,20 +1,22 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-import H1 from '../components/H1.astro';
 import H2 from '../components/H2.astro';
 import Main from '../components/Main.astro';
 
-import TechnicalList from '../components/TechnicalList.astro';
-import TeamList from '../components/TeamList.astro';
-import ProjectList from '../components/ProjectList.astro';
+import headshot from '../assets/images/headshots/2025_headshot.png';
+import cad_symbol from '../assets/images/skills/CAD_Symbol.png';
+import circuit_symbol from '../assets/images/skills/Circuit_Symbol.png';
+import code_symbol from '../assets/images/skills/Coding_Symbol.png';
 
 import { getCollection } from 'astro:content';
+import Technical from '../components/Technical.astro';
+import Team from '../components/Team.astro';
+import Project from '../components/Project.astro'
 
-import headshot from '../assets/2025_headshot.png';
-import cad_symbol from '../assets/CAD_Symbol.png';
-import circuit_symbol from '../assets/Circuit_Symbol.png';
-import code_symbol from '../assets/Coding_Symbol.png';
+const technicals = await getCollection("technicals");
+const teams = await getCollection("teams");
+const projects = await getCollection("projects");
 ---
 
 
@@ -22,108 +24,119 @@ import code_symbol from '../assets/Coding_Symbol.png';
 <html lang="en">
     <Layout title="Home Page">
         <Main>
-            <body class="">
-
-                <div class="introduction grid grid-cols-2 grid-rows-1 
-                            justify-items-center
-                            pt-10 pb-5 text-[#FFD1B2] font-roboto">
-                    <div class="self-blurb text-left content-center">
-                        <h1 class="font-bold text-4xl">Hello, my name is
-                                                        Luca Mason.</h1>
-                        <p>I am a fourth year Mechatronics Engineering 
-                            Student at Memorial University of Newfoundland</p>
-                    </div>
-                    <div class="headshot">
-                            <Image class="rounded-4xl aspect-auto object-cover"
-                                src={headshot}
-                                alt="Headshot.jpg"
-                                width="400" height="800"
-                            />
-                    </div>
-                </div>
-
-                <div class="skills">
-                    <H2 text='Skills'/>
-                    <div class="flex pr-5 pl-5 gap-3 pt-3 pb-3 
-                                rounded-3xl justify-evenly
-                                bg-[#AB81CD]">
-                        <div class="skill_1 grid grid-flow-col grid-rows-3">
-                            <div class="row-span-3 mr-2">
-                                <Image class="aspect-auto"
-                                    src={cad_symbol}
-                                    alt="CAD.png"
-                                    width="50" height="50"
+            <body>
+                <div class="grid items-center max-w-5xl mx-auto">
+                    <div class="introduction grid grid-cols-2 grid-rows-1 
+                                justify-items-center
+                                pt-10 pb-5 text-[#FFD1B2] font-roboto">
+                        <div class="self-blurb text-left content-center">
+                            <h1 class="font-bold text-4xl">Hello, my name is
+                                                            Luca Mason.</h1>
+                            <p>I am a fourth year Mechatronics Engineering 
+                                Student at Memorial University of Newfoundland</p>
+                        </div>
+                        <div class="headshot">
+                                <Image class="rounded-4xl aspect-auto object-cover"
+                                    src={headshot}
+                                    alt="Headshot.jpg"
+                                    width="400" height="800"
                                 />
+                        </div>
+                    </div>
+
+                    <div class="skills">
+                        <H2 text='Skills'/>
+                        <div class="flex pr-5 pl-5 gap-3 pt-3 pb-3 
+                                    rounded-3xl justify-evenly
+                                    bg-[#AB81CD]">
+                            <div class="skill_1 grid grid-flow-col grid-rows-3">
+                                <div class="row-span-3 mr-2">
+                                    <Image class="aspect-auto"
+                                        src={cad_symbol}
+                                        alt="CAD.png"
+                                        width="50" height="50"
+                                    />
+                                </div>
+                                <div class="col-span-2 font-bold">CAD</div>
+                                <div class="col-span-2 row-span-2 text-sm max-w-70">
+                                    CAD design is my strongest skill. 
+                                    I have 
+                                </div>
                             </div>
-                            <div class="col-span-2 font-bold">CAD</div>
-                            <div class="col-span-2 row-span-2 text-sm max-w-70">
-                                CAD design is my strongest skill. 
-                                I have 
+
+                            <div class="skill_2 grid grid-flow-col grid-rows-3">
+                                <div class="row-span-3 mr-2">
+                                    <Image class="aspect-auto"
+                                        src={code_symbol}
+                                        alt="Code.png"
+                                        width="50" height="50"
+                                    />
+                                </div>
+                                <div class="col-span-2 font-bold">Software Development</div>
+                                <div class="col-span-2 row-span-2 text-sm max-w-70">
+                                    I am actively developing my software development skills
+                                </div>
+                            </div>
+
+                            <div class="skill_3 grid grid-flow-col grid-rows-3">
+                                <div class="row-span-3 mr-2">
+                                    <Image class="aspect-auto"
+                                        src={circuit_symbol}
+                                        alt="Circuit.png"
+                                        width="50" height="50"
+                                    />
+                                </div>
+                                <div class="col-span-2 font-bold">Circuit Design</div>
+                                <div class="col-span-2 row-span-2 text-sm max-w-70">
+                                    I thourghly enjoying designing and developing circuits
+                                </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="skill_2 grid grid-flow-col grid-rows-3">
-                            <div class="row-span-3 mr-2">
-                                <Image class="aspect-auto"
-                                    src={code_symbol}
-                                    alt="Code.png"
-                                    width="50" height="50"
-                                />
+                    <div class="experience">
+                        <H2 text='Experience'/>
+                        <div class="grid grid-rows-4 xl:grid-rows-2 grid-cols-1 xl:grid-cols-2
+                                    gap-5 justify-items-center
+                                    ">
+                            <div class="flex">
+                                {technicals.slice(0,1).map((technical) => <Technical technical={technical} />)}
+                                
                             </div>
-                            <div class="col-span-2 font-bold">Software Development</div>
-                            <div class="col-span-2 row-span-2 text-sm max-w-70">
-                                I am actively developing my software development skills
+                            <div>
+                                {technicals.slice(1,2).map((technical) => <Technical technical={technical} />)}
                             </div>
+                            <div class="flex">
+                                {teams.slice(0,1).map((team) => <Team team={team} />)}
+                                
+                            </div>
+                            <div>{teams.slice(1,2).map((team) => <Team team={team} />)}</div>
                         </div>
+                    </div>
 
-                        <div class="skill_3 grid grid-flow-col grid-rows-3">
-                            <div class="row-span-3 mr-2">
-                                <Image class="aspect-auto"
-                                    src={circuit_symbol}
-                                    alt="Circuit.png"
-                                    width="50" height="50"
-                                />
+                    <div class="personal projects grid place-items-center">
+                        <H2 text='Personal Projects'/>
+                        {projects.slice(0,1).map((project) => <Project project={project} />)}
+                    </div>
+
+                    <div class="awards">
+                        <H2 text="Awards"/>
+                        <div class="grid justify-around grid-cols-3 content-center
+                            gap-5 p-3 rounded-3xl mt-5 mb-10
+                            text-center bg-[#AB81CD]">
+                            <div>
+                                <p>Undergraduate Student Research Award (2024,2025)</p>
+                                <p class="text-sm">Awarded by the Natural Sciences and Engineering Research Council of Canada.</p>
                             </div>
-                            <div class="col-span-2 font-bold">Circuit Design</div>
-                            <div class="col-span-2 row-span-2 text-sm max-w-70">
-                                I thourghly enjoying designing and developing circuits
+                            <div>
+                                <p>Polytechnique reaseach award (2025)</p>
+                            </div>
+                            <div>
+                                <p>Faculty of Engineering Dean's List (2022-2023)</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="experience">
-                    <H2 text='Experience'/>
-                    <div class="grid grid-cols-2 grid-rows-2">
-
-                    </div>
-                </div>
-
-                <div class="personal projects ">
-                    <H2 text='Personal Projects'/>
-                    <div class="grid grid-cols-1 grid-rows-2">
-
-                    </div>
-                </div>
-
-                <div class="awards">
-                    <H2 text="Awards"/>
-                    <div class="grid justify-around grid-cols-3 content-center
-                        gap-5 p-3 rounded-3xl mt-10 mb-10
-                        text-center bg-[#AB81CD]">
-                        <div>
-                            <p>Undergraduate Student Research Award (2024,2025)</p>
-                            <p class="text-sm">Awarded by the Natural Sciences and Engineering Research Council of Canada.</p>
-                        </div>
-                        <div>
-                            <p>Polytechnique reaseach award (2025)</p>
-                        </div>
-                        <div>
-                            <p>Faculty of Engineering Dean's List (2022-2023)</p>
-                        </div>
-                    </div>
-                </div>
-
             </body>
         </Main>
     </Layout>
