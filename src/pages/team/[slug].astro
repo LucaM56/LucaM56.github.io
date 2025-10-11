@@ -6,7 +6,7 @@ import { Image } from "astro:assets";
 import { getCollection, render } from 'astro:content';
 
 export const getStaticPaths = async () => {
-    const teams = await getCollection('teams')
+    const teams = await getCollection("teams")
     return teams.map(team => ({
             params: {
                 slug: team.slug
@@ -17,8 +17,10 @@ export const getStaticPaths = async () => {
     }))
 }
 
+
 const {team} = Astro.props;
 const {Content} = await render(team);
+console.log(team)
 ---
 
 <Layout title={team.data.title}>

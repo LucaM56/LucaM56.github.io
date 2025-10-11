@@ -101,7 +101,6 @@ const projects = await getCollection("projects");
                                     ">
                             <div class="flex">
                                 {technicals.slice(0,1).map((technical) => <Technical technical={technical} />)}
-                                
                             </div>
                             <div>
                                 {technicals.slice(1,2).map((technical) => <Technical technical={technical} />)}
@@ -110,7 +109,7 @@ const projects = await getCollection("projects");
                                 {teams.slice(0,1).map((team) => <Team team={team} />)}
                                 
                             </div>
-                            <div>{teams.slice(1,2).map((team) => <Team team={team} />)}</div>
+                            <div>{teams.slice(2,3).map((team) => <Team team={team} />)}</div>
                         </div>
                     </div>
 
@@ -125,14 +124,18 @@ const projects = await getCollection("projects");
                             gap-5 p-3 rounded-3xl mt-5 mb-10
                             text-center bg-[#AB81CD]">
                             <div>
-                                <p>Undergraduate Student Research Award (2024,2025)</p>
+                                <p>Undergraduate Student Research Award</p>
                                 <p class="text-sm">Awarded by the Natural Sciences and Engineering Research Council of Canada.</p>
+                                <p>2024, 2025</p>
                             </div>
                             <div>
-                                <p>Polytechnique reaseach award (2025)</p>
+                                <p>Polytechnique reaseach award</p>
+                                <p>2025</p>
                             </div>
                             <div>
-                                <p>Faculty of Engineering Dean's List (2022-2023)</p>
+                                <p>Faculty of Engineering Dean's List</p>
+                                <p>2022-2023</p>
+                                <p>2024-2025</p>
                             </div>
                         </div>
                     </div>
