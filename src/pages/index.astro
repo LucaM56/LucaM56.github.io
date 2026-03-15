@@ -102,20 +102,12 @@ const projects = getLatest(await getCollection("projects"));
 
                     <div class="experience">
                         <H2 text='Experience'/>
-                        <div class="grid grid-rows-4 xl:grid-rows-2 grid-cols-1 xl:grid-cols-2
+                        <div class="grid grid-cols-1 xl:grid-cols-2
                                     gap-5 justify-items-center
                                     ">
-                            <div class="flex">
-                                {technicals.map((technical) => (
-                                    <Technical technical={technical} />
-                                ))}
-                            </div>
+                                {technicals.map((technical) => (<Technical technical={technical} />))}
+                                {teams.map((team) => (<Team team={team} />))}
 
-                            <div>
-                                {teams.map((team) => (
-                                    <Team team={team} />
-                                ))}
-                            </div>
                         </div>
                     </div>
 
