@@ -14,9 +14,15 @@ import Technical from '../components/Technical.astro';
 import Team from '../components/Team.astro';
 import Project from '../components/Project.astro'
 
-const technicals = await getCollection("technicals");
-const teams = await getCollection("teams");
-const projects = await getCollection("projects");
+function getLatest(entries, count = 2) {
+  return entries
+    .sort((a,b) => (b.data.order ?? 0) - (a.data.order ?? 0))
+    .slice(0, count);
+}
+
+const technicals = getLatest(await getCollection("technicals"));
+const teams = getLatest(await getCollection("teams"));
+const projects = getLatest(await getCollection("projects"));
 ---
 
 
@@ -100,16 +106,16 @@ const projects = await getCollection("projects");
                                     gap-5 justify-items-center
                                     ">
                             <div class="flex">
-                                {technicals.slice(0,1).map((technical) => <Technical technical={technical} />)}
+                                {technicals.map((technical) => (
+                                    <Technical technical={technical} />
+                                ))}
                             </div>
+
                             <div>
-                                {technicals.slice(1,2).map((technical) => <Technical technical={technical} />)}
+                                {teams.map((team) => (
+                                    <Team team={team} />
+                                ))}
                             </div>
-                            <div class="flex">
-                                {teams.slice(0,1).map((team) => <Team team={team} />)}
-                                
-                            </div>
-                            <div>{teams.slice(2,3).map((team) => <Team team={team} />)}</div>
                         </div>
                     </div>
 

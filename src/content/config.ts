@@ -6,6 +6,7 @@ export const collections = {
     projects: defineCollection({
         type: "content",
         schema: ({image}) => z.object({
+            order: z.coerce.number().int(),
             creator: z.string(),
             date: z.string(),
             finished: z.string(),
@@ -17,6 +18,7 @@ export const collections = {
     technicals: defineCollection({
         type: "content",
         schema: ({image}) => z.object({
+            order: z.coerce.number().int(),
             title: z.string(),
             department: z.string(),
             employer: z.string(),
@@ -29,6 +31,7 @@ export const collections = {
     teams: defineCollection({
         type: "content",
         schema: ({image}) => z.object({
+            order: z.coerce.number().int(),
             title: z.string(),
             teamName: z.string(),
             timeFrame: z.string(),

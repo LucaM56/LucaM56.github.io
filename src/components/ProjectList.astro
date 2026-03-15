@@ -6,11 +6,14 @@ type Props = {
 };
 
 const { projects } = Astro.props;
+const sortedProjects = projects.sort(
+    (a,b) => (b.data.order ?? 0) - (a.data.order ?? 0)
+);
 ---
 
 <div
     class="grid grid-cols-1 
             gap-y-10 mb-24 " 
 >
-    {projects.map((project) => <Project project={project} />)}
+    {sortedProjects.map((project) => <Project project={project} />)}
 </div>

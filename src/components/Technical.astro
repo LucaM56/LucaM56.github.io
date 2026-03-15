@@ -8,7 +8,7 @@ const { technical } = Astro.props
                 max-w-xl max-h-50 min-h-40 ml-3 mr-3
                 bg-[#AB81CD]">
         <div class="content-center pr-5">
-            <a href={`/technical/${technical.slug}`}>
+            <a>
                 <Image
                     src={technical.data.image}
                     width={100}
@@ -19,14 +19,17 @@ const { technical } = Astro.props
             </a>
         </div>
         <div class="col-span-3">
-            <a
-                href={`/technical/${technical.slug}`}
-                class="text-2xl text-zinc-900 font-semibold inline-block"
-            >
-                <h2>{technical.data.title}</h2>
+            <a class="text-xl text-zinc-900 font-semibold inline-block">
+                <h2>{technical.data.employer}</h2>
             </a>
-            <p class="text-[#25283D] text-xl line-clamp-2">
-                {technical.body}
+            <p class="text-[#25283D] text-lg font-semibold">
+                {technical.data.title}
+            </p>
+            <p class="text-[#25283D] text-lg">
+                {technical.data.location}
+            </p>
+            <p class="text-[#25283D] text-lg">
+                {technical.data.timeFrame}
             </p>
         </div>
     </div>
